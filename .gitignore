@@ -1,0 +1,16 @@
+# Python / tooling
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+*.egg-info/
+build/
+dist/
+
+# Local editor
+.vscode/
+.idea/
+
+# Puzzles transcribed from the commercial Flow Free app
+data/**/app_*.json

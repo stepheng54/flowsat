@@ -1,0 +1,12 @@
+{
+  "name": "stray_cycle_4x4",
+  "source": "Hand-made. Unsolvable, but the local encoding is SAT (A can form a 2x2 stray cycle). See report/notes.md.",
+  "flows": 2,
+  "colors": {"B": "blue", "A": "red"},
+  "grid": [
+    "..BA",
+    "....",
+    "B...",
+    "A..."
+  ]
+}
