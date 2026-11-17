@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "flowsat"
+version = "0.1.0"
+description = "SAT/SMT encodings for solving and generating Flow Free puzzles"
+requires-python = ">=3.11"
+dependencies = [
+    "z3-solver",
+    "python-sat",
+    "numpy",
+    "matplotlib",
+]
+
+[project.optional-dependencies]
+dev = ["pytest"]
+
+[tool.setuptools.packages.find]
+include = ["flowsat*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
