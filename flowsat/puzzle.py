@@ -88,9 +88,9 @@ class Puzzle:
     def endpoint_owner(self) -> dict[Cell, int]:
         return {cell: color for color, pair in enumerate(self.endpoints) for cell in pair}
 
+    # parse rows like "A..B", "." is empty and each label appears exactly twice
     @classmethod
     def from_strings(cls, lines: Sequence[str], name: str = "") -> Puzzle:
-        """Parse rows like "A..B"; "." is empty, every label must appear exactly twice."""
         lines = [line.strip() for line in lines]
         if not lines or not lines[0]:
             raise ValueError("puzzle must have at least one non-empty row")
@@ -189,8 +189,8 @@ def format_coloring(puzzle: Puzzle, coloring: Coloring) -> str:
     return "\n".join(coloring_to_strings(puzzle, coloring))
 
 
+# puzzle plus its stored solution, if any
 def load_puzzle(path: str | Path) -> tuple[Puzzle, Coloring | None]:
-    """Returns the puzzle and its stored solution, if any."""
     path = Path(path)
     data = json.loads(path.read_text(encoding="utf-8"))
     data.setdefault("name", path.stem)

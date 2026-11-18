@@ -79,8 +79,8 @@ def add_exactly_one(cnf: CNF, lits: Sequence[int]) -> None:
     add_at_most_one(cnf, lits)
 
 
+# guard -> exactly d of lits
 def add_guarded_exactly(cnf: CNF, guard: int, lits: Sequence[int], d: int) -> None:
-    """guard -> exactly d of lits."""
     lits = list(lits)
     n = len(lits)
     if n > GUARDED_MAX_LITS:

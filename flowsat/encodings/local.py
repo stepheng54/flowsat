@@ -42,8 +42,8 @@ class LocalEncoding:
             coloring.append(row)
         return coloring
 
+    # true vars for a coloring, only valid without auxiliary vars
     def assignment(self, coloring: Coloring) -> set[int]:
-        """True variables for a coloring. Only valid without auxiliary variables."""
         if self.cnf.num_vars != self.num_color_vars:
             raise ValueError("encoding has auxiliary variables; a coloring is not a full model")
         k = self.puzzle.num_colors
